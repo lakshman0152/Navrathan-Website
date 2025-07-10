@@ -249,9 +249,9 @@
     }
 
     .services-grid {
-      display: grid; /* CHANGE THIS */
-      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-      gap: 10px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Adjusted for laptop, was 100px, now 280px */
+      gap: 10px; /* Increased gap for better spacing */
       margin-top: 3rem;
     }
 
@@ -407,7 +407,7 @@
         gap: 15px; /* Reduced gap */
         align-items: center; 
         margin-top: 1rem; /* Reduced top margin */
-        max-width: 800px; /* Adjusted max-width */
+        max-width: 800px; /* Adjusted max-width for wider screens */
         margin-left: auto;
         margin-right: auto;
     }
@@ -580,10 +580,6 @@
     }
 
     /* Responsive Design */
-    @media (min-width: 769px) {
-        /* No specific grid for contact-container, remains single column */
-    }
-
     @media (max-width: 992px) {
       .header-content {
         flex-direction: column;
@@ -605,6 +601,10 @@
       }
       section {
         padding: 3rem 1rem;
+      }
+      .services-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adjust min-width for tablets */
+        gap: 20px;
       }
     }
 
@@ -628,7 +628,7 @@
       nav ul li {
         margin-bottom: 10px;
       }
-      .service-card, .founder-card, .contact-item {
+      .service-card, .founder-card { /* Removed .contact-item from here */
         min-width: unset;
         width: 100%;
       }
@@ -639,9 +639,31 @@
       #contact {
           padding: 2rem 1rem; /* Even smaller padding on mobile */
       }
+      .contact-container {
+          max-width: 100%; /* Allow contact section to take full screen width */
+          padding: 0 1rem; /* Add horizontal padding inside container */
+          box-sizing: border-box; /* Include padding in width calculation */
+      }
+      .contact-info-col {
+          grid-template-columns: 1fr; /* Stack items vertically on smaller screens */
+          gap: 10px; /* Reduced gap */
+      }
+      .contact-item {
+          padding: 0.8rem 1rem; /* Even smaller padding for contact items */
+      }
       .contact-item i {
           font-size: 1.5rem; /* Keep consistent or slightly smaller */
       }
+      .contact-item p {
+          font-size: 0.95rem; /* Consistent text size */
+      }
+    }
+
+    @media (max-width: 600px) { /* New breakpoint for specific mobile services grid */
+        .services-grid {
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* 2 service cards per row on smaller mobiles */
+            gap: 15px;
+        }
     }
 
     @media (max-width: 480px) {
