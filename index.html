@@ -3,99 +3,848 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Navrathan Jewellers and Bankers</title>
+  <title>Navrathan Jewellers and Bankers - Your Trusted Partner in Gold & Finance</title>
   <meta name="google-site-verification" content="PMhn0l40cSKyTBMH334qbX_b-Lcp4MVpSdPLy937O_M" />
-  <meta name="description" content="Navrathan Jewellers and Bankers - Trusted gold and silver jewellery with banking services in Bangalore since 2007. Visit us for authentic ornaments and pledging facilities.">
-  <meta name="keywords" content="Navrathan Jewellers, jewellery shop, gold, silver, pledging, bankers, Muslim jewellery, 22K, 18K, Bangalore, Shikaripalya, Anekal">
+  <meta name="description" content="Navrathan Jewellers and Bankers - Trusted gold and silver jewellery with banking services in Bangalore since 2007. Visit us for authentic ornaments, pledging facilities, and expert financial advice.">
+  <meta name="keywords" content="Navrathan Jewellers, jewellery shop, gold, silver, pledging, bankers, Muslim jewellery, 22K, 18K, Bangalore, Shikaripalya, Anekal, gold loan, authentic jewellery, financial services, custom jewellery, bespoke ornaments">
   <meta name="author" content="Navrathan Jewellers and Bankers">
   <link rel="canonical" href="https://lakshman0152.github.io/Navrathan-Website/" />
+  <link rel="icon" href="favicon.png" type="image/png" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
   <style>
+    /* General styles, color palette, and typography - ADAPTED FOR LIGHT THEME */
+    :root {
+      --primary-gold: #b8860b; /* A rich gold */
+      --secondary-gold: #d4af37; /* Lighter gold */
+      --text-dark: #333; /* Dark grey for main text */
+      --text-light: #fefefe; /* Near white for text on dark backgrounds (used sparingly) */
+      --bg-light: #ffffff; /* Pure white background */
+      --bg-off-white: #f8f8f8; /* Very light grey for subtle section breaks */
+      --bg-accent-light: #fdfae6; /* A very light gold tint for sections */
+      --header-bg: #fff; /* White header */
+      --header-text: #333; /* Dark text for header */
+      --footer-bg: #333; /* Dark footer as contrast */
+
+      --gradient-start: #e0b04a;
+      --gradient-end: #b8860b;
+      
+      /* Subtle shadows for a lighter feel */
+      --shadow-subtle: 0 4px 15px rgba(0,0,0,0.08);
+      --shadow-hover: 0 8px 25px rgba(0,0,0,0.12);
+      --border-light: 1px solid #eee; /* Very light border */
+    }
+
     body {
-      font-family: 'Segoe UI', sans-serif;
+      font-family: 'Montserrat', sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #fefefe;
-      color: #333;
+      background-color: var(--bg-light);
+      color: var(--text-dark);
+      line-height: 1.6;
+      overflow-x: hidden;
     }
-    header {
-      background-color: #d4af37;
-      color: white;
-      text-align: center;
-      padding: 2rem 1rem;
+
+    h1, h2, h3 {
+      font-family: 'Cormorant Garamond', serif;
+      color: var(--primary-gold); /* Gold headings */
+      margin-bottom: 1rem;
     }
-    header h1 {
-      margin: 0;
-      font-size: 2.5rem;
+
+    h1 {
+      font-size: 3.5rem;
+      font-weight: 700;
+      letter-spacing: 1px;
     }
-    section {
-      padding: 2rem 1rem;
-      max-width: 800px;
-      margin: auto;
-    }
+
     h2 {
-      color: #b8860b;
-      border-bottom: 2px solid #eee;
+      font-size: 2.5rem;
+      font-weight: 600;
+      text-align: center;
+      margin-bottom: 2.5rem;
+      position: relative;
       padding-bottom: 0.5rem;
     }
-    .contact a {
-      color: #b8860b;
-      text-decoration: none;
+
+    h2::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 3px;
+      background-color: var(--primary-gold); /* Gold underline */
+      border-radius: 2px;
     }
-    footer {
-      background-color: #f3f3f3;
+
+    section {
+      padding: 4rem 1.5rem;
+      max-width: 1200px;
+      margin: auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Hero Section - The big impactful top part */
+    .hero {
+      position: relative;
+      width: 100%;
+      height: 450px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: var(--text-light);
       text-align: center;
-      padding: 1rem;
-      font-size: 0.9rem;
-      color: #666;
+      /* Keep dark overlay for readability on image */
+      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('images/jewellery.jpg') no-repeat center center/cover;
+      background-attachment: fixed;
     }
-    @media (max-width: 600px) {
-      header h1 {
+
+    .hero h1 {
+      font-size: 4rem;
+      margin-bottom: 1rem;
+      color: white; /* Keep white for contrast on dark hero */
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+    }
+
+    .hero p {
+      font-size: 1.5rem;
+      font-weight: 300;
+      margin-bottom: 2rem;
+      color: rgba(255,255,255,0.9);
+    }
+
+    .cta-button {
+      background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
+      color: white;
+      padding: 15px 30px;
+      border: none;
+      border-radius: 50px;
+      font-size: 1.2rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      box-shadow: var(--shadow-subtle);
+    }
+
+    .cta-button:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-hover);
+      background: linear-gradient(to left, var(--gradient-start), var(--gradient-end));
+    }
+
+    /* Header & Navigation - Light Theme */
+    header {
+      background-color: var(--header-bg); /* White header */
+      color: var(--header-text); /* Dark text for header */
+      padding: 1rem 0;
+      text-align: center;
+      box-shadow: var(--shadow-subtle); /* Subtle shadow */
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .header-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 1.5rem;
+    }
+
+    .logo-title {
+      font-size: 1.8rem;
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 700;
+      color: var(--primary-gold); /* Gold logo title */
+      margin: 0;
+      display: flex;
+      align-items: center;
+    }
+
+    .logo-title img {
+      height: 40px;
+      margin-right: 10px;
+      filter: drop-shadow(0 0 5px rgba(0,0,0,0.1)); /* Subtle shadow for logo on light background */
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+
+    nav ul li {
+      margin-left: 30px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--header-text); /* Dark text for links */
+      font-weight: 500;
+      font-size: 1.1rem;
+      position: relative;
+      padding-bottom: 5px;
+      transition: color 0.3s ease;
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      background-color: var(--primary-gold); /* Gold underline on hover */
+      transition: width 0.3s ease;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    nav a:hover {
+      color: var(--primary-gold);
+    }
+
+    /* Sections general text */
+    section p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto 1.5rem auto;
+      color: var(--text-dark); /* Ensure text is dark on light background */
+    }
+
+    #about p {
+        text-align: justify;
+    }
+    #about p strong {
+        color: var(--primary-gold);
+    }
+
+    /* Services Section - Light Theme */
+    #services {
+      background-color: var(--bg-off-white); /* Light grey background for services */
+      color: var(--text-dark); /* Dark text */
+    }
+
+    #services h2 {
+      color: var(--primary-gold); /* Gold heading */
+    }
+    #services h2::after {
+        background-color: var(--primary-gold);
+    }
+
+    .services-grid {
+      display: grid; /* CHANGE THIS */
+      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+      gap: 10px;
+      margin-top: 3rem;
+    }
+
+    .service-card {
+      background: var(--bg-light); /* White cards */
+      padding: 2rem;
+      border-radius: 15px;
+      box-shadow: var(--shadow-subtle); /* Subtle shadow */
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border: var(--border-light); /* Light border */
+    }
+
+    .service-card:hover {
+      transform: translateY(-8px); /* Less dramatic lift */
+      box-shadow: var(--shadow-hover);
+    }
+
+    .service-card h3 {
+      color: var(--primary-gold); /* Gold heading */
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+    }
+
+    .service-card p {
+      font-size: 1rem;
+      color: var(--text-dark); /* Dark text */
+    }
+    .service-card i {
+        color: var(--secondary-gold); /* Gold icons in services */
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+    }
+
+    /* Founders Section */
+    .founders {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      justify-content: center;
+      text-align: center;
+      margin-top: 3rem;
+    }
+
+    .founder-card {
+      width: 220px;
+      background: var(--bg-light);
+      padding: 1.5rem;
+      border-radius: 15px;
+      box-shadow: var(--shadow-subtle);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border: var(--border-light);
+    }
+
+    .founder-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .founder-card img {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 4px solid var(--primary-gold);
+      box-shadow: 0 0 15px rgba(184, 134, 11, 0.2); /* Lighter shadow for images */
+      transition: transform 0.3s ease;
+    }
+
+    .founder-card:hover img {
+        transform: scale(1.03);
+    }
+
+    .founder-name {
+      margin-top: 15px;
+      font-weight: 700;
+      font-size: 1.3rem;
+      color: var(--text-dark);
+    }
+
+    .founder-title {
+        font-size: 0.9rem;
+        color: #777;
+        margin-top: 5px;
+    }
+
+    /* Pledge Section */
+    #pledge {
+      background-color: var(--bg-accent-light); /* Light gold tinted background */
+      color: var(--text-dark);
+    }
+
+    #pledge h2 {
+      color: var(--primary-gold);
+    }
+    #pledge h2::after {
+        background-color: var(--primary-gold);
+    }
+
+    #pledge ul {
+      list-style: none;
+      padding: 0;
+      max-width: 800px;
+      margin: 2rem auto;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 15px;
+    }
+
+    #pledge ul li {
+      background: white;
+      padding: 1rem 1.5rem;
+      border-left: 5px solid var(--primary-gold);
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.03); /* Very subtle shadow */
+      display: flex;
+      align-items: center;
+      border: var(--border-light);
+    }
+
+    #pledge ul li strong {
+      color: var(--text-dark);
+      margin-right: 0.5rem;
+    }
+
+    #pledge ul li::before {
+        content: '\2713'; /* Checkmark */
+        color: var(--primary-gold);
+        font-size: 1.2rem;
+        margin-right: 15px;
+    }
+    
+    /* Contact Section - OPTIMIZED FOR SMALLER & SIMPLER LAYOUT */
+    #contact {
+        background: var(--bg-off-white); 
+        color: var(--text-dark); 
+        text-align: center;
+        padding: 3rem 1.5rem; /* Reduced padding */
+        position: relative;
+    }
+
+    #contact h2 {
+        color: var(--primary-gold); 
+        margin-bottom: 2rem; /* Reduced margin */
+    }
+    #contact h2::after {
+        background-color: var(--primary-gold);
+    }
+
+    .contact-container {
+        display: flex; /* Kept flex to allow centering */
+        flex-direction: column; 
+        gap: 15px; /* Reduced gap */
+        align-items: center; 
+        margin-top: 1rem; /* Reduced top margin */
+        max-width: 800px; /* Adjusted max-width */
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .contact-info-col {
+        display: grid; 
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); /* Even smaller min-width */
+        gap: 15px; /* Reduced gap for a tighter grid */
+        width: 100%; 
+        padding: 0; 
+    }
+
+    .contact-item {
+        background: var(--bg-light); 
+        padding: 1rem 1.2rem; /* Even smaller padding */
+        border-radius: 12px; /* Slightly smaller border-radius */
+        box-shadow: var(--shadow-subtle); 
+        transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+        display: flex;
+        align-items: center; /* Align items centrally for more compact look */
+        border: var(--border-light); 
+    }
+
+    .contact-item:hover {
+        transform: translateY(-3px); /* Less dramatic lift */
+        box-shadow: var(--shadow-hover);
+        background: var(--bg-accent-light); 
+    }
+
+    .contact-item i {
+        font-size: 1.5rem; /* Smaller icon size */
+        color: var(--primary-gold); 
+        margin-right: 12px; /* Reduced margin */
+        min-width: 20px; /* Adjust min-width for icon alignment */
+        text-align: center;
+    }
+
+    .contact-item p {
+        margin: 0;
+        color: var(--text-dark); 
+        font-size: 0.95rem; /* Slightly smaller text */
+        line-height: 1.4; /* Tighter line height for multi-line text */
+        flex-grow: 1;
+        max-width: none;
+        text-align: left; 
+    }
+    .contact-item p strong {
+        color: var(--primary-gold); 
+        display: block; /* Make strong text block for clearer separation */
+        margin-bottom: 3px; /* Space between bold label and content */
+    }
+
+    .contact-item a {
+        color: var(--primary-gold); 
+        text-decoration: none;
+        transition: color 0.3s ease, text-decoration 0.3s ease;
+    }
+
+    .contact-item a:hover {
+        color: var(--text-dark); 
+        text-decoration: underline;
+    }
+
+    /* Optional: Contact Form Section */
+    .contact-form-section {
+        background: var(--bg-light); 
+        padding: 3rem 1.5rem; /* Reduced padding */
+        max-width: 1200px;
+        margin: auto;
+        border-top: var(--border-light);
+        text-align: center;
+    }
+
+    .contact-form-section h2 {
+        color: var(--primary-gold);
+    }
+
+    .contact-form {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 15px; /* Reduced gap */
+        max-width: 500px; /* Smaller max-width for the form */
+        margin: 1.5rem auto; /* Reduced margin */
+        background: var(--bg-light); 
+        padding: 2rem; /* Reduced padding */
+        border-radius: 12px; /* Slightly smaller border-radius */
+        box-shadow: var(--shadow-subtle);
+        border: var(--border-light);
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        width: 100%;
+        padding: 10px 12px; /* Reduced padding */
+        border: 1px solid #ddd;
+        border-radius: 6px; /* Slightly smaller border-radius */
+        font-family: 'Montserrat', sans-serif;
+        font-size: 0.95rem; /* Slightly smaller font size */
+        color: var(--text-dark);
+        transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+        border-color: var(--primary-gold);
+        box-shadow: 0 0 0 3px rgba(184, 134, 11, 0.1); 
+        outline: none;
+    }
+
+    .contact-form textarea {
+        resize: vertical;
+        min-height: 100px; /* Slightly smaller min-height */
+    }
+
+    .contact-form button {
+        background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
+        color: white;
+        padding: 12px 20px; /* Reduced padding */
+        border: none;
+        border-radius: 50px;
+        font-size: 1rem; /* Slightly smaller font size */
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: var(--shadow-subtle);
+    }
+
+    .contact-form button:hover {
+        transform: translateY(-3px);
+        box-shadow: var(--shadow-hover);
+        background: linear-gradient(to left, var(--gradient-start), var(--gradient-end));
+    }
+
+
+    /* Footer - Kept dark for contrast */
+    footer {
+      background-color: var(--footer-bg);
+      color: #aaa;
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 0.9rem;
+      border-top: 1px solid #444;
+    }
+
+    /* Scroll to Top Button */
+    #scroll-to-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: var(--primary-gold);
+      color: white;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.5rem;
+      text-decoration: none;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+      z-index: 1000;
+      box-shadow: var(--shadow-subtle);
+    }
+
+    #scroll-to-top.show {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    /* Responsive Design */
+    @media (min-width: 769px) {
+        /* No specific grid for contact-container, remains single column */
+    }
+
+    @media (max-width: 992px) {
+      .header-content {
+        flex-direction: column;
+      }
+      nav ul {
+        margin-top: 15px;
+      }
+      nav ul li {
+        margin: 0 10px;
+      }
+      .hero h1 {
+        font-size: 3rem;
+      }
+      .hero p {
+        font-size: 1.2rem;
+      }
+      h2 {
+        font-size: 2rem;
+      }
+      section {
+        padding: 3rem 1rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        height: 400px;
+      }
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+      .hero p {
+        font-size: 1rem;
+      }
+      .logo-title {
+        font-size: 1.5rem;
+      }
+      nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      nav ul li {
+        margin-bottom: 10px;
+      }
+      .service-card, .founder-card, .contact-item {
+        min-width: unset;
+        width: 100%;
+      }
+      h2 {
         font-size: 1.8rem;
+      }
+      /* Contact section adjustments for smaller screens */
+      #contact {
+          padding: 2rem 1rem; /* Even smaller padding on mobile */
+      }
+      .contact-item i {
+          font-size: 1.5rem; /* Keep consistent or slightly smaller */
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero {
+        height: 350px;
+      }
+      .hero h1 {
+        font-size: 2rem;
+      }
+      .cta-button {
+        padding: 12px 25px;
+        font-size: 1rem;
+      }
+      .logo-title {
+        font-size: 2rem;
+      }
+      nav a {
+        font-size: 0.9rem;
+      }
+      section {
+        padding: 2rem 1rem;
+      }
+      .founder-card {
+        width: 100%;
+      }
+      .contact-item i {
+        font-size: 1.3rem; /* Slightly smaller icon for tiny screens */
+      }
+      .contact-item p {
+          font-size: 0.9rem; /* Smaller text for tiny screens */
+      }
+      .contact-form {
+          padding: 1.5rem; /* Even smaller form padding */
+      }
+      .contact-form input,
+      .contact-form textarea {
+          padding: 8px 10px; /* Even smaller input padding */
+          font-size: 0.9rem;
+      }
+      .contact-form button {
+          padding: 10px 15px; /* Even smaller button padding */
+          font-size: 0.95rem;
       }
     }
   </style>
 </head>
 <body>
+  <section class="hero" data-aos="fade-in" data-aos-duration="1500">
+    <h1 data-aos="fade-up" data-aos-delay="300">Navrathan Jewellers and Bankers</h1>
+    <p data-aos="fade-up" data-aos-delay="500">Your Trusted Partner in Authentic Gold, Silver, and Financial Services.</p>
+    <a href="#services" class="cta-button" data-aos="zoom-in" data-aos-delay="700">Explore Our Offerings</a>
+  </section>
 
   <header>
-    <h1>Navrathan Jewellers and Bankers</h1>
-    <p>Authentic gold, silver, and pledging services since 2007</p>
+    <div class="header-content">
+      <div class="logo-title">
+        <img src="images/NavrathanLogo.png" alt="Navrathan Logo">
+        Navrathan
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#founders">Founders</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#pledge">Pledging</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
-  <section>
-    <h2>About Our Shop</h2>
-    <p>Navrathan Jewellers and Bankers was established in 2007 by <strong>Madanlal</strong> and <strong>Mangalaram</strong>. Our store is trusted for genuine gold and silver jewellery in Bangalore, especially known for styles preferred by the Muslim community.</p>
-    <p>We also provide pledging facilities as we hold a valid banking license, making us a unique combination of jeweller and banker.</p>
+  <section id="about" data-aos="fade-up">
+    <h2>About Our Legacy</h2>
+    <p><strong>Navrathan Jewellers and Bankers</strong>, established in <strong>2007</strong> by the visionary <strong>Madanlal Parihar</strong> and <strong>Mangalaram Parihar</strong>, stands as a beacon of trust and authenticity in Bangalore's jewellery and financial landscape.</p>
+    <p>We are renowned for our exquisite collection of genuine gold and silver jewellery, with a special focus on designs cherished by the Muslim community. What truly sets us apart is our dual expertise: we also operate as licensed bankers, providing secure and transparent pledging facilities, making us your unique destination for both precious ornaments and reliable financial services.</p>
   </section>
 
-  <section>
-    <h2>Management</h2>
-    <p>The shop is proudly managed by <strong>Mangalaram</strong>, continuing the family tradition of trust and excellence in service.</p>
+  <section id="founders" data-aos="fade-right">
+    <h2>Our Esteemed Founders</h2>
+    <div class="founders">
+      <div class="founder-card" data-aos="zoom-in-up" data-aos-delay="100">
+        <img src="images/madanlal.jpeg" alt="Madanlal Parihar">
+        <div class="founder-name">Madanlal Parihar</div>
+        <div class="founder-title">Co-Founder</div>
+      </div>
+      <div class="founder-card" data-aos="zoom-in-up" data-aos-delay="200">
+        <img src="images/mangalaram.jpeg" alt="Mangalaram Parihar">
+        <div class="founder-name">Mangalaram Parihar</div>
+        <div class="founder-title">Co-Founder & Managing Director</div>
+      </div>
+    </div>
+    <p style="margin-top: 2rem;">Today, the shop is expertly managed by <strong>Mangalaram Parihar</strong>, who continues to uphold the family's deep-rooted tradition of unwavering trust, exceptional quality, and unparalleled customer service.</p>
   </section>
 
-  <section>
-    <h2>What We Sell</h2>
+  <section id="services" data-aos="fade-left">
+    <h2>Our Core Offerings</h2>
+    <div class="services-grid">
+      <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+        <h3><i class="fas fa-gem"></i> Gold Jewellery</h3>
+        <p>Discover a stunning array of <strong>18K & 22K gold jewellery</strong>, from timeless traditional pieces to modern designs. We specialize in intricate styles, particularly catering to the preferences of the Muslim community.</p>
+      </div>
+      <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+        <h3><i class="fas fa-hand-holding"></i> Silver Collections</h3>
+        <p>Explore our diverse range of <strong>silver ornaments and articles</strong>, perfect for daily wear, special occasions, or thoughtful gifts. Each piece reflects superior craftsmanship and purity.</p>
+      </div>
+      <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+        <h3><i class="fas fa-coins"></i> Secure Pledging Services</h3>
+        <p>Access quick and secure gold and silver loan services through our <strong>fully licensed banking facility</strong>. Experience peace of mind with transparent processes and competitive rates.</p>
+      </div>
+      <div class="service-card" data-aos="fade-up" data-aos-delay="400">
+        <h3><i class="fas fa-hammer"></i> Custom Jewellery</h3>
+        <p>Bring your unique vision to life! We also take <strong>custom jewellery orders</strong>, crafting bespoke designs in gold and silver to perfectly match your personal style and special occasions.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="pledge" data-aos="fade-up">
+    <h2>Transparent Gold & Silver Pledging</h2>
+    <p>At Navrathan Jewellers and Bankers, we pride ourselves on offering exceptionally safe, transparent, and digitally managed gold and silver pledging services. Our valid banking license ensures complete trust and efficiency in every transaction, making your financial needs our priority.</p>
     <ul>
-      <li>18K & 22K Gold Jewellery – All categories, with a focus on traditional Muslim designs</li>
-      <li>Silver Ornaments – All categories and styles</li>
-      <li>Pledging Services – Available under our licensed banking facility</li>
+      <li data-aos="fade-right" data-aos-delay="100"><strong>Low Interest Rates:</strong> Benefit from highly competitive and customer-friendly interest rates designed to make borrowing accessible and easy.</li>
+      <li data-aos="fade-right" data-aos-delay="200"><strong>Streamlined Digital Process:</strong> Our pledging process is entirely managed through a secure digital platform, significantly reducing paperwork, waiting times, and unnecessary delays.</li>
+      <li data-aos="fade-right" data-aos-delay="300"><strong>Swift & Hassle-Free Service:</strong> Enjoy a fast and efficient experience, with instant evaluations and quick approvals, ensuring you get the funds you need without delay.</li>
+      <li data-aos="fade-right" data-aos-delay="400"><strong>Valid ID Proof Required:</strong> For your security and compliance, a valid government-issued photo identification is required to complete the pledging process.</li>
+      <li data-aos="fade-right" data-aos-delay="500"><strong>Flexible Pledge Duration:</strong> Your valuable ornaments are securely stored for up to 1 year, with a generous grace period of 15 days for your convenience.</li>
+      <li data-aos="fade-right" data-aos-delay="600"><strong>Easy Renewable Terms:</strong> Pledges can be easily renewed, offering continued financial flexibility and peace of mind without needing to redeem and re-pledge.</li>
     </ul>
+    <p style="margin-top: 2rem;">Rest assured, your precious jewellery is handled with the utmost care and stored in our state-of-the-art, fully secure lockers. Join the thousands who trust us daily — visit Navrathan Jewellers and Bankers and experience the difference!</p>
   </section>
 
-  <section class="contact">
-    <h2>Contact Us</h2>
-    <p><strong>📍 Address:</strong> Navrathan Jewellers and Bankers, Near Noorani Masjid, Gollahalli Main Road, Shikaripalya, Hulimangala Post, Anekal Taluk, Bangalore – 560100</p>
-    <p><strong>📞 Phone:</strong> <a href="tel:+919481426770">94814 26770</a></p>
-    <p><strong>💬 WhatsApp:</strong> <a href="https://wa.me/919481426770" target="_blank">Chat with us on WhatsApp</a></p>
-    <p><strong>📧 Email:</strong> <a href="mailto:navrathanbankers2007@gmail.com">navrathanbankers2007@gmail.com</a></p>
-    <p><strong>⏰ Timings:</strong> 9:30 AM to 9:30 PM (Lunch break: 2:00 PM – 3:30 PM)</p>
-    <p><strong>📆 Weekly Off:</strong> Half-day every Friday (closes at 2:00 PM) & closed on every Amavasya</p>
+  <section id="contact" data-aos="fade-up">
+    <h2>Connect With Us</h2>
+    <div class="contact-container">
+      <div class="contact-info-col">
+        <div class="contact-item" data-aos="fade-right" data-aos-delay="100">
+          <i class="fas fa-map-marker-alt"></i>
+          <p><strong>Address:</strong> Navrathan Jewellers and Bankers, Near Noorani Masjid, Gollahalli Main Road, Shikaripalya, Hulimangala Post, Anekal Taluk, Bangalore – 560100</p>
+        </div>
+        <div class="contact-item" data-aos="fade-right" data-aos-delay="200">
+          <i class="fas fa-phone-alt"></i>
+          <p><strong>Phone:</strong> <a href="tel:+919481426770">94814 26770</a></p>
+        </div>
+        <div class="contact-item" data-aos="fade-right" data-aos-delay="300">
+          <i class="fab fa-whatsapp"></i>
+          <p><strong>WhatsApp:</strong> <a href="https://wa.me/919481426770" target="_blank">Chat with us</a></p>
+        </div>
+        <div class="contact-item" data-aos="fade-right" data-aos-delay="400">
+          <i class="fas fa-envelope"></i>
+          <p><strong>Email:</strong> <a href="mailto:navrathanbankers2007@gmail.com">navrathanbankers2007@gmail.com</a></p>
+        </div>
+        <div class="contact-item timings" data-aos="fade-right" data-aos-delay="500">
+          <i class="fas fa-clock"></i>
+          <p><strong>Store Timings:</strong> 9:30 AM – 9:30 PM (Lunch: 2:00 PM – 3:30 PM)<br><strong>Weekly Off:</strong> Half-day Friday (closes 2:00 PM) & every Amavasya</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact-form-section" data-aos="fade-up">
+    <h2>Send Us a Message</h2>
+    <p>Have a question or need assistance? Fill out the form below and we'll get back to you promptly.</p>
+    <form class="contact-form" action="https://formsubmit.co/navrathanbankers2007@gmail.com" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required data-aos="fade-up" data-aos-delay="100">
+      <input type="email" name="email" placeholder="Your Email" required data-aos="fade-up" data-aos-delay="200">
+      <input type="tel" name="phone" placeholder="Your Phone (Optional)" data-aos="fade-up" data-aos-delay="300">
+      <textarea name="message" placeholder="Your Message" rows="6" required data-aos="fade-up" data-aos-delay="400"></textarea>
+      <button type="submit" data-aos="zoom-in" data-aos-delay="500">Send Message</button>
+    </form>
   </section>
 
   <footer>
-    &copy; 2007–2025 Navrathan Jewellers and Bankers. All rights reserved.
+    © 2007–2025 Navrathan Jewellers and Bankers. All rights reserved.
   </footer>
 
+  <a href="#" id="scroll-to-top" title="Go to top">
+    <i class="fas fa-arrow-up"></i>
+  </a>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: true,
+      mirror: false,
+    });
+
+    const scrollToTopBtn = document.getElementById('scroll-to-top');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        scrollToTopBtn.classList.add('show');
+      } else {
+        scrollToTopBtn.classList.remove('show');
+      }
+    });
+
+    scrollToTopBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  </script>
 </body>
 </html>
-<!DOCTYPE html>
