@@ -95,7 +95,7 @@
     .hero {
       position: relative;
       width: 100%;
-      height: 450px;
+      height: 580px;
       overflow: hidden;
       display: flex;
       flex-direction: column;
@@ -250,8 +250,9 @@
 
     .services-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Adjusted for laptop, was 100px, now 280px */
-      gap: 10px; /* Increased gap for better spacing */
+      /* Default for larger screens (Laptops/Desktops) */
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+      gap: 30px; 
       margin-top: 3rem;
     }
 
@@ -580,6 +581,16 @@
     }
 
     /* Responsive Design */
+
+    /* Laptop/Tablet (larger than 768px) */
+    @media (min-width: 769px) {
+        .services-grid {
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* 3-4 columns on larger screens */
+            gap: 10px;
+        }
+    }
+
+    /* General tablet adjustments (992px and below) */
     @media (max-width: 992px) {
       .header-content {
         flex-direction: column;
@@ -602,12 +613,14 @@
       section {
         padding: 3rem 1rem;
       }
+      /* Service grid for tablets (up to 768px handled separately) */
       .services-grid {
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adjust min-width for tablets */
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adjust min-width for tablets, likely 2-3 columns */
         gap: 20px;
       }
     }
 
+    /* Mobile (768px and below) */
     @media (max-width: 768px) {
       .hero {
         height: 400px;
@@ -628,7 +641,7 @@
       nav ul li {
         margin-bottom: 10px;
       }
-      .service-card, .founder-card { /* Removed .contact-item from here */
+      .founder-card { 
         min-width: unset;
         width: 100%;
       }
@@ -659,13 +672,15 @@
       }
     }
 
-    @media (max-width: 600px) { /* New breakpoint for specific mobile services grid */
+    /* Specific breakpoint for mobile service cards (600px and below) */
+    @media (max-width: 600px) {
         .services-grid {
             grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* 2 service cards per row on smaller mobiles */
             gap: 15px;
         }
     }
 
+    /* Smaller mobile screens (480px and below) */
     @media (max-width: 480px) {
       .hero {
         height: 350px;
@@ -685,9 +700,6 @@
       }
       section {
         padding: 2rem 1rem;
-      }
-      .founder-card {
-        width: 100%;
       }
       .contact-item i {
         font-size: 1.3rem; /* Slightly smaller icon for tiny screens */
