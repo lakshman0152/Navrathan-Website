@@ -6,7 +6,7 @@
   <title>Navrathan Jewellers and Bankers - Your Trusted Partner in Gold & Finance</title>
   <meta name="google-site-verification" content="PMhn0l40cSKyTBMH334qbX_b-Lcp4MVpSdPLy937O_M" />
   <meta name="description" content="Navrathan Jewellers and Bankers - Trusted gold and silver jewellery with banking services in Bangalore since 2007. Visit us for authentic ornaments, pledging facilities, and expert financial advice.">
-  <meta name="keywords" content="Navrathan Jewellers, jewellery shop, gold, silver, pledging, bankers, Muslim jewellery, 22K, 18K, Bangalore, Shikaripalya, Anekal, gold loan, authentic jewellery, financial services, custom jewellery, bespoke ornaments">
+  <meta name="keywords" content="Navrathan Jewellers, jewellery shop, gold, silver, pledging, bankers, Muslim jewellery, 22K, 18K, Bangalore, Shikaripalya, Anekal, gold loan, authentic jewellery, financial services, custom jewellery, bespoke ornaments, ear piercing, nose piercing, gold savings scheme">
   <meta name="author" content="Navrathan Jewellers and Bankers">
   <link rel="canonical" href="https://lakshman0152.github.io/Navrathan-Website/" />
   <link rel="icon" href="favicon.png" type="image/png" />
@@ -472,6 +472,26 @@
         text-decoration: underline;
     }
 
+    /* Contact Item for Timings to span two columns */
+    .contact-item.timings {
+        grid-column: span 2; /* Spans two columns */
+        /* Removed justify-content: center; from here */
+    }
+
+    /* Styles for the new timings layout */
+    .contact-item.timings p {
+        display: flex;
+        flex-wrap: wrap; /* Allows wrapping on smaller screens */
+        justify-content: flex-start; /* ALIGN TO THE LEFT */
+        align-items: center;
+        gap: 10px; /* Space between the timing sections */
+    }
+
+    .contact-item.timings p .separator {
+        color: #ccc; /* Light grey for the separator */
+        font-weight: 300;
+    }
+
     /* Optional: Contact Form Section */
     .contact-form-section {
         background: var(--bg-light); 
@@ -542,7 +562,15 @@
         background: linear-gradient(to left, var(--gradient-start), var(--gradient-end));
     }
 
+    #contact a {
+      color: #0019f7;
+      text-decoration: none;
+    }
 
+    #contact a:hover {
+      color: #0b0055;
+      text-decoration: underline;
+    }
     /* Footer - Kept dark for contrast */
     footer {
       background-color: var(--footer-bg);
@@ -618,6 +646,10 @@
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adjust min-width for tablets, likely 2-3 columns */
         gap: 20px;
       }
+      /* Ensure timings item stacks on smaller tablets */
+      .contact-item.timings {
+          grid-column: span 1; /* Reset to 1 column on smaller screens */
+      }
     }
 
     /* Mobile (768px and below) */
@@ -670,6 +702,18 @@
       .contact-item p {
           font-size: 0.95rem; /* Consistent text size */
       }
+      /* Ensure timings item stacks on mobile */
+      .contact-item.timings {
+          grid-column: span 1;
+      }
+      .contact-item.timings p {
+          flex-direction: column; /* Stack them vertically on mobile */
+          align-items: flex-start; /* Align text to the left */
+          gap: 5px; /* Adjust gap for stacking */
+      }
+      .contact-item.timings p .separator {
+          display: none; /* Hide separator on mobile when stacked */
+      }
     }
 
     /* Specific breakpoint for mobile service cards (600px and below) */
@@ -687,6 +731,9 @@
       }
       .hero h1 {
         font-size: 2rem;
+      }
+      .hero p {
+        font-size: 1rem;
       }
       .cta-button {
         padding: 12px 25px;
@@ -750,7 +797,7 @@
   <section id="about" data-aos="fade-up">
     <h2>About Our Legacy</h2>
     <p><strong>Navrathan Jewellers and Bankers</strong>, established in <strong>2007</strong> by the visionary <strong>Madanlal Parihar</strong> and <strong>Mangalaram Parihar</strong>, stands as a beacon of trust and authenticity in Bangalore's jewellery and financial landscape.</p>
-    <p>We are renowned for our exquisite collection of genuine gold and silver jewellery, with a special focus on designs cherished by the Muslim community. What truly sets us apart is our dual expertise: we also operate as licensed bankers, providing secure and transparent pledging facilities, making us your unique destination for both precious ornaments and reliable financial services.</p>
+    <p>Our collection is especially loved for its authentic gold and silver designs, thoughtfully curated for the Muslim community — with a variety of options available for others as well. What truly sets us apart is our dual expertise: we also operate as licensed bankers, providing secure and transparent pledging facilities, making us your unique destination for both precious ornaments and reliable financial services.</p>
   </section>
 
   <section id="founders" data-aos="fade-right">
@@ -767,27 +814,35 @@
         <div class="founder-title">Co-Founder & Managing Director</div>
       </div>
     </div>
-    <p style="margin-top: 2rem;">Today, the shop is expertly managed by <strong>Mangalaram Parihar</strong>, who continues to uphold the family's deep-rooted tradition of unwavering trust, exceptional quality, and unparalleled customer service.</p>
+    <p style="margin-top: 2rem;">Today, the shop is expertly managed by <strong>Mangalaram Parihar</strong>, who continues to uphold the family's deep-rooted tradition of unwavering trust, exceptional quality, and unparalleled customer service, guided by the enduring vision of Madanlal Parihar.</p>
   </section>
 
   <section id="services" data-aos="fade-left">
     <h2>Our Core Offerings</h2>
     <div class="services-grid">
       <div class="service-card" data-aos="fade-up" data-aos-delay="100">
-        <h3><i class="fas fa-gem"></i> Gold Jewellery</h3>
-        <p>Discover a stunning array of <strong>18K & 22K gold jewellery</strong>, from timeless traditional pieces to modern designs. We specialize in intricate styles, particularly catering to the preferences of the Muslim community.</p>
+        <h3><i class="fas fa-gem fa-fade"></i> Gold Jewellery</h3>
+        <p>Discover our stunning <strong>hallmarked</strong> gold jewellery, featuring <strong>18K</strong> and a curated selection of <strong>22K</strong>. We offer intricate traditional and modern designs, with a special focus on styles cherished by the Muslim community.</p>
       </div>
       <div class="service-card" data-aos="fade-up" data-aos-delay="200">
-        <h3><i class="fas fa-hand-holding"></i> Silver Collections</h3>
+        <h3><i class="fas fa-solid fa-ring fa-fade"></i> Silver Collections</h3>
         <p>Explore our diverse range of <strong>silver ornaments and articles</strong>, perfect for daily wear, special occasions, or thoughtful gifts. Each piece reflects superior craftsmanship and purity.</p>
       </div>
+      <div class="service-card" data-aos="fade-up" data-aos-delay="400">
+        <h3><i class="fas fa-hammer fa-fade"></i> Custom Jewellery</h3>
+        <p>Bring your unique vision to life! We also take <strong>custom jewellery orders</strong>, crafting bespoke designs in gold and silver to perfectly match your personal style and special occasions.</p>
+      </div>
       <div class="service-card" data-aos="fade-up" data-aos-delay="300">
-        <h3><i class="fas fa-coins"></i> Secure Pledging Services</h3>
+        <h3><i class="fas fa-coins fa-fade"></i> Secure Pledging Services</h3>
         <p>Access quick and secure gold and silver loan services through our <strong>fully licensed banking facility</strong>. Experience peace of mind with transparent processes and competitive rates.</p>
       </div>
-      <div class="service-card" data-aos="fade-up" data-aos-delay="400">
-        <h3><i class="fas fa-hammer"></i> Custom Jewellery</h3>
-        <p>Bring your unique vision to life! We also take <strong>custom jewellery orders</strong>, crafting bespoke designs in gold and silver to perfectly match your personal style and special occasions.</p>
+      <div class="service-card" data-aos="fade-up" data-aos-delay="500">
+        <h3><i class="fas fa-hand-holding-usd fa-fade"></i> Gold Savings Scheme</h3>
+        <p>Participate in our exclusive <strong>Gold Savings Scheme</strong>. Pay a fixed monthly amount for a year, and we'll add a bonus month's contribution, allowing you to purchase gold with enhanced value.</p>
+      </div>
+      <div class="service-card" data-aos="fade-up" data-aos-delay="600">
+        <h3><i class="fas fa-solid fa-ear-deaf fa-fade"></i> Ear & Nose Piercing</h3>
+        <p>Experience safe and easy ear and nose piercing using our advanced <strong>gun machine</strong>. Our method ensures a hygienic, quick, and virtually pain-free process for all ages.</p>
       </div>
     </div>
   </section>
@@ -796,7 +851,7 @@
     <h2>Transparent Gold & Silver Pledging</h2>
     <p>At Navrathan Jewellers and Bankers, we pride ourselves on offering exceptionally safe, transparent, and digitally managed gold and silver pledging services. Our valid banking license ensures complete trust and efficiency in every transaction, making your financial needs our priority.</p>
     <ul>
-      <li data-aos="fade-right" data-aos-delay="100"><strong>Low Interest Rates:</strong> Benefit from highly competitive and customer-friendly interest rates designed to make borrowing accessible and easy.</li>
+      <li data-aos="fade-right" data-aos-delay="100"><strong>Competitive Financing Rates:</strong> Benefit from highly competitive and customer-friendly financing rates designed to make borrowing accessible and easy.</li>
       <li data-aos="fade-right" data-aos-delay="200"><strong>Streamlined Digital Process:</strong> Our pledging process is entirely managed through a secure digital platform, significantly reducing paperwork, waiting times, and unnecessary delays.</li>
       <li data-aos="fade-right" data-aos-delay="300"><strong>Swift & Hassle-Free Service:</strong> Enjoy a fast and efficient experience, with instant evaluations and quick approvals, ensuring you get the funds you need without delay.</li>
       <li data-aos="fade-right" data-aos-delay="400"><strong>Valid ID Proof Required:</strong> For your security and compliance, a valid government-issued photo identification is required to complete the pledging process.</li>
@@ -807,31 +862,40 @@
   </section>
 
   <section id="contact" data-aos="fade-up">
-    <h2>Connect With Us</h2>
-    <div class="contact-container">
-      <div class="contact-info-col">
-        <div class="contact-item" data-aos="fade-right" data-aos-delay="100">
-          <i class="fas fa-map-marker-alt"></i>
-          <p><strong>Address:</strong> Navrathan Jewellers and Bankers, Near Noorani Masjid, Gollahalli Main Road, Shikaripalya, Hulimangala Post, Anekal Taluk, Bangalore – 560100</p>
-        </div>
-        <div class="contact-item" data-aos="fade-right" data-aos-delay="200">
-          <i class="fas fa-phone-alt"></i>
-          <p><strong>Phone:</strong> <a href="tel:+919481426770">94814 26770</a></p>
-        </div>
-        <div class="contact-item" data-aos="fade-right" data-aos-delay="300">
-          <i class="fab fa-whatsapp"></i>
-          <p><strong>WhatsApp:</strong> <a href="https://wa.me/919481426770" target="_blank">Chat with us</a></p>
-        </div>
-        <div class="contact-item" data-aos="fade-right" data-aos-delay="400">
-          <i class="fas fa-envelope"></i>
-          <p><strong>Email:</strong> <a href="mailto:navrathanbankers@gmail.com">navrathanbankers@gmail.com</a></p>
-        </div>
-        <div class="contact-item timings" data-aos="fade-right" data-aos-delay="500">
-          <i class="fas fa-clock"></i>
-          <p><strong>Store Timings:</strong> 9:30 AM – 9:30 PM (Lunch: 2:00 PM – 3:30 PM)<br><strong>Weekly Off:</strong> Half-day Friday (closes 2:00 PM) & every Amavasya</p>
+      <h2>Connect With Us</h2>
+      <div class="contact-container">
+        <div class="contact-info-col">
+          <div class="contact-item" data-aos="fade-right" data-aos-delay="100">
+            <i class="fas fa-map-marker-alt fa-beat"></i>
+            <p>
+              <strong>Address:</strong> 
+              <a href="https://maps.app.goo.gl/KLLpWr886xGSg5R78" target="_blank" rel="noopener noreferrer">
+                Navrathan Jewellers and Bankers, Near Noorani Masjid, Gollahalli Main Road, Shikaripalya, Hulimangala Post, Anekal Taluk, Bangalore – 560100
+              </a>
+            </p>
+          </div>
+          <div class="contact-item" data-aos="fade-right" data-aos-delay="200">
+            <i class="fas fa-phone-alt fa-beat"></i>
+            <p><strong>Phone:</strong> <a href="tel:+919611453083">9611453083</a><br> Call us for any enquiries.</p>
+          </div>
+          <div class="contact-item" data-aos="fade-right" data-aos-delay="300">
+            <i class="fab fa-whatsapp fa-beat"></i>
+            <p><strong>WhatsApp:</strong> <a href="https://wa.me/919611453083" target="_blank">Chat with us</a><br> We're just a message away — ask about rates, services, or anything you need.</p>
+          </div>
+          <div class="contact-item" data-aos="fade-right" data-aos-delay="400">
+            <i class="fas fa-envelope fa-beat"></i>
+            <p><strong>Email:</strong> <a href="mailto:navrathanbankers@gmail.com">navrathanbankers@gmail.com</a></p>
+          </div>
+          <div class="contact-item timings" data-aos="fade-right" data-aos-delay="500">
+            <i class="fas fa-clock fa-beat"></i>
+            <p>
+              <span><strong>Store Timings:</strong> 9:30 AM – 9:30 PM (Lunch: 2:00 PM – 3:30 PM)</span>
+              <span class="separator">|</span>
+              <span><strong>Weekly Off:</strong> Half-day on every Friday &<br> Holiday on every Amavasya</span>
+            </p>
+          </div>
         </div>
       </div>
-    </div>
   </section>
 
   <section class="contact-form-section" data-aos="fade-up">
