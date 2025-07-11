@@ -769,40 +769,6 @@
     }
   </style>
 </head>
-<script>
-  async function fetchGoldRates() {
-    try {
-      // Fetch gold price in USD per troy ounce (from GitHub)
-      const response = await fetch("https://raw.githubusercontent.com/datasets/gold-prices/main/data/gold-prices.json");
-      const data = await response.json();
-      const latest = data[data.length - 1]; // Get latest entry
-      const usdPerOunce = parseFloat(latest["Price"]);
-
-      // Convert USD/ounce to INR/gram
-      const usdToInr = 83; // You can make this dynamic with free currency rate APIs too
-      const gramsPerOunce = 31.1035;
-      const inrPerGram = (usdPerOunce * usdToInr) / gramsPerOunce;
-
-      // Approx silver (hardcoded estimate or scraped separately)
-      const silverPerGram = 76.5; // Optional: use a similar JSON if needed
-
-      const marquee = document.querySelector('#metal-prices marquee');
-      marquee.textContent = `Gold Rate: ₹${inrPerGram.toFixed(2)} per gram | Silver Rate: ₹${silverPerGram} per gram — Updated Daily (Auto)`;
-
-    } catch (err) {
-      console.error("Failed to fetch metal rates:", err);
-      document.querySelector('#metal-prices marquee').textContent = "Live gold & silver rates currently unavailable.";
-    }
-  }
-
-  fetchGoldRates();
-</script>
-
-<div id="live-rates" style="background: #fff9c4; color: #444; padding: 10px; font-weight: bold;">
-  <marquee behavior="scroll" direction="left" scrollamount="5">
-    Loading latest gold and silver rates...
-  </marquee>
-</div>
 <body>
   <section class="hero" data-aos="fade-in" data-aos-duration="1500">
     <h1 data-aos="fade-up" data-aos-delay="300">Navrathan Jewellers and Bankers</h1>
@@ -979,5 +945,4 @@
     });
   </script>
 </body>
-
 </html>
